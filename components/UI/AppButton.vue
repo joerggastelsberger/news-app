@@ -39,30 +39,22 @@ export default {
 
 .button:hover,
 .button:active {
-  background-color: #CFA20E;
+  background-color: #dfa70c;
   border-radius: 4px;
 }
 
 .button:disabled {
-  opacity: 74%;
+  background-color: #dfa70c;
   cursor: default;
 }
 
-.button:disabled:hover,
-.button:disabled:active {
-  background-color: #E8B610;
-  border-radius: 4px;
-}
-
 .cancel {
-  background-color: #6c7275;
+  background-color: #92999c;
   color: white;
 }
 
 .cancel:hover,
 .cancel:active {
-  background-color: transparent; 
-  border: 1px solid #6c7275;
-  color: white;
+  background-color: #6c7275; 
 }
 </style>
