@@ -55,15 +55,14 @@ export default {
 }
 
 .cancel {
-  background-color: transparent;
-  color: #A4AEB3;
-  border: 1px solid #A4AEB3;
+  background-color: #6c7275;
+  color: white;
 }
 
 .cancel:hover,
 .cancel:active {
   background-color: transparent; 
-  border: 1px solid white;
+  border: 1px solid #6c7275;
   color: white;
 }
 </style>
