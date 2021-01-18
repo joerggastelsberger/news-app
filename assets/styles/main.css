@@ -1,0 +1,37 @@
+.background-dark {
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+
+p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.2s;
+  }
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}  
+
+.opacity-enter-active,
+.opacity-leave-active {
+  transition: all 0.3s ease-out;
+}
+.opacity-enter,
+.opacity-leave-to {
+  opacity: 0;
+}
