@@ -1,6 +1,6 @@
 # news-app
 
-news-app enables puts you up to date with worldwide news.
+news-app puts you up to date with worldwide news.
 
 ## Getting Started
 
