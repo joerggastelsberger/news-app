@@ -61,67 +61,44 @@ export default {
   data() {
     return {
       categories: [
+        { key: "breaking-news", name: "Breaking News" },
         { key: "business", name: "Business" },
-        { key: "entertainment", name: "Entertainment" },
-        { key: "general", name: "General" },
-        { key: "health", name: "Health" },
         { key: "science", name: "Science" },
         { key: "sports", name: "Sports" },
         { key: "technology", name: "Technology" },
+        { key: "health", name: "Health" },
+        { key: "entertainment", name: "Entertainment" },
       ],
       countries: [
-        { key: "ae", name: "United Arab Emirates" },
-        { key: "ar", name: "Argentinia" },
-        { key: "at", name: "Austria" },
         { key: "au", name: "Australia" },
-        { key: "be", name: "Belgium" },
-        { key: "bg", name: "Bulgaria" },
         { key: "br", name: "Brazil" },
         { key: "ca", name: "Canada" },
         { key: "ch", name: "Switzerland" },
         { key: "cn", name: "China" },
-        { key: "co", name: "Colombia" },
-        { key: "cu", name: "Cuba" },
-        { key: "cz", name: "Czechia" },
         { key: "de", name: "Germany" },
         { key: "eg", name: "Egypt" },
         { key: "fr", name: "France" },
         { key: "gb", name: "United Kingdom" },
         { key: "gr", name: "Greece" },
         { key: "hk", name: "Hong Kong" },
-        { key: "hu", name: "Hungary" },
-        { key: "id", name: "Indonesia" },
         { key: "ie", name: "Ireland" },
         { key: "il", name: "Israel" },
         { key: "in", name: "India" },
         { key: "it", name: "Italy" },
         { key: "jp", name: "Japan" },
-        { key: "kr", name: "Korea" },
-        { key: "lt", name: "Lithuania" },
-        { key: "lv", name: "Latvia" },
-        { key: "ma", name: "Morocco" },
-        { key: "my", name: "Malaysia" },
-        { key: "ng", name: "Nigeria" },
         { key: "nl", name: "Netherlands" },
         { key: "no", name: "Norway" },
-        { key: "nz", name: "New Zealand" },
+        { key: "pe", name: "Peru" },
         { key: "ph", name: "Philippines" },
-        { key: "pl", name: "Poland" },
+        { key: "pk", name: "Pakistan" },
+        { key: "pt", name: "Portugal" },
         { key: "ro", name: "Romania" },
-        { key: "rs", name: "Serbia" },
         { key: "ru", name: "Russian Federation" },
-        { key: "sa", name: "Saudi Arabia" },
         { key: "se", name: "Sweden" },
         { key: "sg", name: "Singapore" },
-        { key: "si", name: "Slovenia" },
-        { key: "sk", name: "Slovakia" },
-        { key: "th", name: "Thailand" },
-        { key: "tr", name: "Turkey" },
         { key: "tw", name: "Taiwan" },
         { key: "ua", name: "Ukraine" },
         { key: "us", name: "United States of America" },
-        { key: "ve", name: "Venezuela" },
-        { key: "za", name: "Zambia" },
       ],
       showCategories: true,
       showCountries: true,
@@ -159,8 +136,14 @@ export default {
   left: 0;
   box-sizing: border-box;
   box-shadow: 4px 8px 24px 8px rgba(0, 0, 0, 0.7);
-  padding: 60px 60px 20px 60px;
+  padding: 40px 40px 10px 40px;
   overflow: auto;
+}
+
+@media (min-width: 768px) {
+  .sidenav {
+    padding: 60px 60px 20px 60px;
+  }
 }
 
 .slide-nav-enter-active,
@@ -193,7 +176,13 @@ export default {
 }
 
 .nav-title {
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .nav-title {
+    margin: 0 0 20px 0;
+  }
 }
 </style>

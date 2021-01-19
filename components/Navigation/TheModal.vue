@@ -70,7 +70,6 @@ export default {
       criterias: [
         { value: "publishedAt", text: "Newest (default)" },
         { value: "relevancy", text: "Relevant" },
-        { value: "popularity", text: "Popular" },
       ],
       selectedCriteria: "publishedAt",
     };
@@ -123,25 +122,27 @@ export default {
   position: fixed;
   z-index: 10000;
   right: 0;
-  top: 25%;
+  top: 15%;
   left: 0;
   margin: auto;
-  width: 83%;
-  padding: 50px;
+  width: 80%;
+  padding: 30px;
   box-shadow: 4px 8px 24px 8px rgba(0, 0, 0, 0.7);
   border-radius: 4px;
 }
 
-/* @media (min-width: 460px) {
-  .article-preview {
-    box-shadow: 4px 8px 24px 8px #232526;
+@media (min-width: 375px) {
+  .modal {
+    top: 25%;
+    width: 81%;
   }
-} */
+}
 
 @media (min-width: 768px) {
   .modal {
     top: 31%;
     width: 60%;
+    padding: 50px;
   }
 }
 

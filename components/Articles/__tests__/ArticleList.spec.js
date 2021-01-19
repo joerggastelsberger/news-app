@@ -4,9 +4,9 @@ import ArticlePreview from '../ArticlePreview.vue'
 
 describe('ArticleList.vue', () => {
     test('renders an ArticlePreview with data for each article it receives', () => {
-        const articles = [{ title: 'A', encodedTitle: 'eA', description: 'dA', url: 'uA', urlToImage: 'utIA', publishedAt: 'pA' },
-                          { title: 'B', encodedTitle: 'eB', description: 'dB', url: 'uB', urlToImage: 'utIB', publishedAt: 'pB'  },
-                          { title: 'C', encodedTitle: 'eC', description: 'dC', url: 'uC', urlToImage: 'utIC', publishedAt: 'pC'  }]
+        const articles = [{ title: 'A', encodedTitle: 'eA', description: 'dA', url: 'uA', image: 'utIA', publishedAt: 'pA' },
+                          { title: 'B', encodedTitle: 'eB', description: 'dB', url: 'uB', image: 'utIB', publishedAt: 'pB'  },
+                          { title: 'C', encodedTitle: 'eC', description: 'dC', url: 'uC', image: 'utIC', publishedAt: 'pC'  }]
         const wrapper = shallowMount(ArticleList, {
             propsData: {
                 articles
@@ -19,7 +19,7 @@ describe('ArticleList.vue', () => {
             expect(wrapper.props().encodedTitle).toBe(articles[i].encodedTitle)
             expect(wrapper.props().description).toBe(articles[i].description)
             expect(wrapper.props().url).toBe(articles[i].url)
-            expect(wrapper.props().urlToImage).toBe(articles[i].urlToImage)
+            expect(wrapper.props().urlToImage).toBe(articles[i].image)
             expect(wrapper.props().publishedAt).toBe(articles[i].publishedAt)
         })
     })

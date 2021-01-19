@@ -40,19 +40,28 @@ describe('actions', () => {
         expect(store.getters.loadedArticles[1].encodedTitle).toBe('title-2')
     })
 
+    test('setCategory commits setCountry with "us" when no country avaliable', async () => {
+        expect.assertions(2)
+        const country = 'testCategory'
+        store.commit('setCountry', '')
+        expect(store.getters.country).toBe('')
+        await store.dispatch('setCategory', country)
+        expect(store.getters.country).toBe('us')
+    })
+
     test('setCountry commits setCountry with country', async () => {
         const country = 'testCountry'
         await store.dispatch('setCountry', country)
         expect(store.getters.country).toBe(country)
     })
 
-    test('setCountry commits setCategory with "general" when no category avaliable', async () => {
+    test('setCountry commits setCategory with "breaking-news" when no category avaliable', async () => {
         expect.assertions(2)
         const country = 'testCountry'
         store.commit('setCategory', '')
         expect(store.getters.category).toBe('')
         await store.dispatch('setCountry', country)
-        expect(store.getters.category).toBe('general')
+        expect(store.getters.category).toBe('breaking-news')
     })
 
     test('setCountry commits setArticles with encodedArticles', async () => {

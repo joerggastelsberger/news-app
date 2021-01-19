@@ -22,9 +22,6 @@ And run the tests with:
 npm run test:unit
 ```
 ```
-npm run test:integration
-```
-```
 npm run test:acceptance
 ```
 

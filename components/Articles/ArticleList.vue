@@ -8,7 +8,7 @@
       :encodedTitle="article.encodedTitle"
       :description="article.description"
       :url="article.url"
-      :urlToImage="article.urlToImage"
+      :urlToImage="article.image"
       :publishedAt="article.publishedAt"
     ></article-preview>
   </section>

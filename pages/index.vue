@@ -40,4 +40,8 @@ export default {
     justify-content: center;
   }
 }
+
+.article-list-empty {
+  text-align: center;
+}
 </style>

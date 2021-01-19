@@ -1,14 +1,14 @@
 describe('Journeys', () => {
-    it('should render article previews', () => {
+    it('renders article previews', () => {
         cy.visit('/')
         cy.get('[data-cy="article-list"]')
           .find('[data-cy="article-preview"]')
           .should('exist')
     })
 
-    it('should update article previews when choosing another category', () => {
+    it('updates article previews when choosing another category', () => {
         let articlePreviews
-        cy.intercept('/v2//top-headlines?country=us&category=business').as('getArticles')
+        cy.intercept('/api/v4/top-headlines?country=us&topic=business&token=71465ce1e23b34078aa486634d5b1de4').as('getArticles')
         cy.visit('/')
         cy.get('[data-cy="article-list"]')
           .find('[data-cy="article-preview"]')
@@ -28,9 +28,9 @@ describe('Journeys', () => {
         })
     })
 
-    it('should update article previews when choosing another country', () => {
+    it('updates article previews when choosing another country', () => {
         let articlePreviews
-        cy.intercept('/v2//top-headlines?country=at&category=general').as('getArticles')
+        cy.intercept('/api/v4/top-headlines?country=au&topic=breaking-news&token=71465ce1e23b34078aa486634d5b1de4').as('getArticles')
         cy.visit('/')
         cy.get('[data-cy="article-list"]')
           .find('[data-cy="article-preview"]')
@@ -40,7 +40,7 @@ describe('Journeys', () => {
         cy.get('[data-cy="toggle"]')
           .click()
         cy.get('[data-cy="nav-list-countries"]')
-          .contains('Austria')
+          .contains('Australia')
           .click()
           .wait('@getArticles')
         cy.get('[data-cy="article-list"]')
@@ -50,9 +50,9 @@ describe('Journeys', () => {
         })
     })
 
-    it('should update article previews when submitting the search modal', () => { 
+    it('updates article previews when submitting the search modal', () => { 
         let articlePreviews
-        cy.intercept('/v2//everything?q=test-and-google&sortBy=publishedAt').as('getArticles')
+        cy.intercept('/api/v4/search?q=google&sortby=publishedAt&token=71465ce1e23b34078aa486634d5b1de4').as('getArticles')
         cy.visit('/')
         cy.get('[data-cy="article-list"]')
           .find('[data-cy="article-preview"]')
@@ -63,7 +63,7 @@ describe('Journeys', () => {
           .click()
         cy.get('[data-cy="modal-search-terms"]')
           .find('textarea')
-          .type('test AND google')
+          .type('google')
         cy.get('[data-cy="modal-submit"]')
           .click()
           .wait('@getArticles')
@@ -74,7 +74,7 @@ describe('Journeys', () => {
         })
     })
 
-    it('should render article details when clicking on an article preview', () => { 
+    it('renders article details when clicking on an article preview', () => { 
         cy.visit('/')
         cy.get('[data-cy="article-list"]')
           .find('[data-cy="article-preview"]')
@@ -87,7 +87,7 @@ describe('Journeys', () => {
           .should('be.visible') 
     })
 
-    it('should redirect to "/" when clicking on "NEWS"', () => { 
+    it('redirects to "/" when clicking on "NEWS"', () => { 
         cy.visit('/')
         cy.get('[data-cy="article-list"]')
           .find('[data-cy="article-preview"]')

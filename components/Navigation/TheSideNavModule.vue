@@ -53,7 +53,13 @@ export default {
 .nav-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 40px 0;
+  margin: 0 0 20px 0;
+}
+
+@media (min-width: 768px) {
+  .nav-list {
+    margin: 0 0 40px 0;
+  }
 }
 
 .nav-item {

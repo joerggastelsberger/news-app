@@ -14,7 +14,7 @@ jest.mock('@/assets/images/background-main.jpg', () => {
 let loadedArticle = {
     title: 'test-title',
     content: 'test-content',
-    urlToImage: 'test-url',
+    image: 'test-url',
     publishedAt: new Date(2020, 11, 12),
     author: 'test-author',
     source: {
@@ -53,11 +53,6 @@ describe('_title.vue', () => {
         expect(wrapper.text()).toContain('test-source')
     })
 
-    test('renders article author', () => {
-        const wrapper = createWrapper()
-        expect(wrapper.text()).toContain('test-author')
-    })
-
     test('renders article content', () => {
         const wrapper = createWrapper()
         expect(wrapper.text()).toContain('test-content')
@@ -75,7 +70,7 @@ describe('_title.vue', () => {
     })
 
     test('renders a default article image when no article image avaliable in article', () => {
-        loadedArticle.urlToImage = ''
+        loadedArticle.image = ''
         const wrapper = createWrapper()
         const articleImage = wrapper.find('.article-image')
         expect(articleImage.element.style.backgroundImage).toBe(`url(@/assets/images/background-main.jpg)`);

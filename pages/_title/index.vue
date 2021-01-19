@@ -8,7 +8,6 @@
           <div class="article-detail">
             Source {{ loadedArticle.source.name }}
           </div>
-          <div class="article-detail">Author {{ loadedArticle.author }}</div>
           <div class="article-detail">
             Published at {{ loadedArticle.publishedAt | date }}
           </div>
@@ -27,8 +26,8 @@ export default {
       return this.$store.getters.loadedArticle;
     },
     articleImage() {
-      return this.loadedArticle.urlToImage
-        ? { backgroundImage: `url(${this.loadedArticle.urlToImage})` }
+      return this.loadedArticle.image
+        ? { backgroundImage: `url(${this.loadedArticle.image})` }
         : {
             backgroundImage: `url(${require("@/assets/images/background-main.jpg")})`,
           };
@@ -48,7 +47,7 @@ export default {
 
 @media (min-width: 768px) {
   .single-article-page {
-    padding: 40px 60px;
+    padding: 40px 60px 60px 60px;
   }
 }
 
@@ -79,7 +78,7 @@ export default {
 }
 
 .article-text {
-  padding: 40px 20px;
+  padding: 40px 10px;
 }
 
 .article-title {
@@ -98,7 +97,7 @@ export default {
 }
 
 .article-details {
-  margin: 29px 0;
+  margin: 20px 0;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -108,7 +107,6 @@ export default {
 
 @media (min-width: 768px) {
   .article-details {
-    margin: 30px 0;
     flex-direction: row;
   }
 }
@@ -126,7 +124,13 @@ export default {
 }
 
 .article-content {
-  margin: 0 20px;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .article-content {
+    margin: 0 20px;
+  }
 }
 </style>
 

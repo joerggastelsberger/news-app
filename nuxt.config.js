@@ -31,7 +31,6 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~plugins/axios' },
     { src: '~plugins/core-components' },
     { src: '~plugins/vuelidate' },
     { src: '~plugins/date-filter.js' }
@@ -66,8 +65,8 @@ export default {
     }
   },
   env: {
-    NEWS_BASE_URL: 'https://newsapi.org/v2/',
-    NEWS_API_KEY: '3b347e9bd3d0491eabe085d6d8649f17'
+    NEWS_BASE_URL: 'https://gnews.io/api/v4',
+    NEWS_API_KEY: '71465ce1e23b34078aa486634d5b1de4'
   },
   pageTransition: {
     name: 'fade',
